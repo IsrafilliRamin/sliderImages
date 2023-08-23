@@ -1,2 +1,1 @@
-# Slider-Images
-Js
+ https://israfilliramin.github.io/sliderImages/
