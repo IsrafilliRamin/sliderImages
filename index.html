@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image-prev-next</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .boxImg {
+            width: 600px;
+            height: 400px;
+           
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        button {
+            background: rgb(63, 94, 251);
+            background: linear-gradient(90deg, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+            border: none;
+            border-radius: 10px;
+            padding: 17px;
+            margin: 10px;
+            cursor: pointer;
+            transition: .8s all;
+        }
+        button:hover{
+            background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(224,18,150,1) 35%, rgba(0,212,255,1) 100%);
+        }
+       
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div><button class="pijl-links" onclick="prev()">prev</button></div>
+        <div class="boxImg">
+            <img src="background-image-vibrant-rainbow-flag-paint-with-smudges-generative-ai_786587-5370.avif"
+                class="omejan-images">
+        </div>
+        <div><button class="pijl-rechts" onclick="next()">next</button></div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+        var slider_img = document.querySelector('.omejan-images');
+        var images = ['background-image-vibrant-rainbow-flag-paint-with-smudges-generative-ai_786587-5370.avif', 'flowers-276014_640.jpg', 'istockphoto-517188688-612x612.jpg', 'pexels-anjana-c-674010.jpg', 'pexels-pixabay-268533.jpg', 'photo-1495344517868-8ebaf0a2044a.jpg'];
+        let i = 0;
+
+        function prev() {
+            if (i <= 0) i = images.length;i--;
+            getImage()
+        }
+        function next() {
+            if (i >= images.length - 1) i = -1;i++;
+            getImage()
+        }
+
+        function getImage() {
+            slider_img.setAttribute("src", images[i])
+        }
+
+    </script>
+</body>
+
+</html>
